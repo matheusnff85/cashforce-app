@@ -1,0 +1,70 @@
+.mainTable {
+  background-color: var(--main-white);
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 0.9rem;
+  font-weight: 450;
+  margin-top: 25px;
+  max-width: 100%;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.mainTable td, .mainTable th {
+  text-align: center;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.mainTable td {
+  font-size: 0.85rem;
+}
+
+.mainTable thead th {
+  color: var(--main-gray);
+}
+
+.mainTable tbody tr {
+  color: var(--main-black);
+}
+
+.mainTable tbody tr td {
+  border: solid 1px var(--main-gray);
+  border-style: solid none;
+  padding: 10px;
+}
+
+.mainTable tbody tr td:first-child {
+  border-left-style: solid;
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+}
+.mainTable tbody tr td:last-child {
+  border-right-style: solid;
+  border-bottom-right-radius: 5px; 
+  border-top-right-radius: 5px; 
+}
+
+.tableStatus, .tableValue {
+  color: var(--main-green);
+}
+
+.tableBtn {
+  background: var(--main-white);
+  border: 1px solid var(--main-gray);
+	border-radius: 25px;
+	color: var(--main-black);
+  cursor: pointer;
+	display: block;
+	font-size: 1em;
+	font-weight: 550;
+  height: 25px;
+	justify-content: center;
+	outline: none;
+	transition: .2s ease-in;
+  width: 200px;
+}
+
+.tableBtn:hover {
+  background: var(--main-green);
+}

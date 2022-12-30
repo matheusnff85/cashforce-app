@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styled from '../css/table.module.css';
 
 function Table() {
   const [orders, setOrders] = useState([]);
@@ -23,7 +24,7 @@ function Table() {
   }, []);
 
   return (
-    <table>
+    <table className={ styled.mainTable }>
       <thead>
         <tr>
           <th>NOTA FISCAL</th>
@@ -41,10 +42,12 @@ function Table() {
             <td>{ order.buyers.name }</td>
             <td>{ order.providers.name }</td>
             <td>{ order.emissionDate }</td>
-            <td>{ Number(order.value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }</td>
-            <td>{ orderStatus[order.orderStatusBuyer] }</td>
+            <td className={ styled.tableValue } >
+              { Number(order.value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }
+            </td>
+            <td className={ styled.tableStatus } >{ orderStatus[order.orderStatusBuyer] }</td>
             <td>
-              <button>Dados do cedente</button>
+              <button className={ styled.tableBtn } >Dados do cedente</button>
             </td>
         </tr>
         ))}
