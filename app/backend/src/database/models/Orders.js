@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     emissionDate: {
       type: DataTypes.STRING,
       allowNull: true,
+      get() {
+        return new Date(this.getDataValue('emissionDate')).toLocaleDateString();
+      },
     },
     pdfFile: {
       type: DataTypes.STRING,
@@ -54,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
       get() {
-        return this.getDataValue('saleDate')
+        return this.getDataValue('createdAt')
           .toLocaleString('en-GB', { timeZone: 'UTC' });
       },
     },
@@ -62,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
       get() {
-        return this.getDataValue('saleDate')
+        return this.getDataValue('updatedAt')
           .toLocaleString('en-GB', { timeZone: 'UTC' });
       },
     },
@@ -109,12 +112,12 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'orders',
   });
 
-  Orders.associate = (models) => {
-    Orders.belongsTo(models.Cnpjs, { foreignKey: 'cnpjId', as: 'cnpjs' });
-    Orders.belongsTo(models.Users, { foreignKey: 'userId', as: 'users' });
-    Orders.belongsTo(models.Buyers, { foreignKey: 'buyerId', as: 'buyers' });
-    Orders.belongsTo(models.Providers, { foreignKey: 'providerId', as: 'providers' });
-  };
+  // Orders.associate = (models) => {
+  //   Orders.belongsTo(models.Cnpjs, { foreignKey: 'cnpjId', as: 'cnpjs' });
+  //   Orders.belongsTo(models.Users, { foreignKey: 'userId', as: 'users' });
+  //   Orders.belongsTo(models.Buyers, { foreignKey: 'buyerId', as: 'buyers' });
+  //   Orders.belongsTo(models.Providers, { foreignKey: 'providerId', as: 'providers' });
+  // };
 
   return Orders;
 };
