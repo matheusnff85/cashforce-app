@@ -1,55 +1,84 @@
 module.exports = (sequelize, DataTypes) => {
-  const Orders = sequelize.define('Orders', {
+  const Buyers = sequelize.define('Buyers', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    orderNfId: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    orderNumber: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    orderPath: {
+    tradingName: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    orderFileName: {
+    cashforceTax: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    orderOriginalName: {
+    responsibleName: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    emissionDate: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      get() {
-        return new Date(this.getDataValue('emissionDate')).toLocaleDateString();
-      },
-    },
-    pdfFile: {
+    responsibleEmail: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    emitedTo: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    nNf: {
+    responsiblePosition: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    CTE: {
+    responsiblePhone: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    value: {
+    responsibleMobile: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    website: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    postalCode: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    number: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    complement: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    neighborhood: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    phoneNumber: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    situation: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    situationDate: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -73,51 +102,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    userId: {
+    confirm: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
-    buyerId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    providerId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    orderStatusBuyer: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-    },
-    orderStatusProvider: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-    },
-    deliveryReceipt: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    cargoPackingList: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    deliveryCtrc: {
+    email: {
       type: DataTypes.STRING,
       allowNull: true,
     },
   }, {
     timestamps: true,
-    tableName: 'orders',
+    tableName: 'buyers',
   });
 
-  Orders.associate = (models) => {
-    Orders.belongsTo(models.Cnpjs, { foreignKey: 'cnpjId', as: 'cnpjs' });
-    Orders.belongsTo(models.Users, { foreignKey: 'userId', as: 'users' });
-    Orders.belongsTo(models.Buyers, { foreignKey: 'buyerId', as: 'buyers' });
-    Orders.belongsTo(models.Providers, { foreignKey: 'providerId', as: 'providers' });
-  };
-
-  return Orders;
+  return Buyers;
 };
