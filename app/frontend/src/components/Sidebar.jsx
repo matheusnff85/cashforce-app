@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '../css/sidebar.module.css'
 import logo from '../images/logo.png'
 
