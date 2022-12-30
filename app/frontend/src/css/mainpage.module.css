@@ -1,0 +1,17 @@
+.mainPageContainer {
+  margin-top: 75px;
+  margin-left: 25px;
+}
+
+.nfTitle {
+  font-family: 'Roboto Slab';
+  color: var(--main-blue);
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.nfSubTitle {
+  font-family: 'Roboto Slab';
+  color: var(--main-gray);
+  font-size: 0.85em;
+}
