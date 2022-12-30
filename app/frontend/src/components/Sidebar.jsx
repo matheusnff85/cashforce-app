@@ -1,15 +1,14 @@
+import styled from '../css/sidebar.module.css'
+import logo from '../images/logo.png'
+
 function Sidebar() {
   return (
-    <aside>
+    <aside className={ styled.sidebar } >
       <div>
-        <h2>Cashforce</h2>
+        <img src={ logo } alt="cashforce logo" />
       </div>
-      <div>
-        <ul>
-          <li>
-            Notas Fiscais
-          </li>
-        </ul>
+      <div className={ styled.sidenav } >
+        <a href="/">Notas Fiscais</a>
       </div>
     </aside>
   );

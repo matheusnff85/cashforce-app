@@ -1,0 +1,36 @@
+.sidebar {
+  background-color: #FBFDFE;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  padding-top: 20px;
+  top: 0;
+  width: 16vw;
+  z-index: 1;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--main-green);
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #047e5b;
+}
+
+.sidebarTitle {
+  color: var(--background-green);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
