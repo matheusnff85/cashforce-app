@@ -112,12 +112,12 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'orders',
   });
 
-  // Orders.associate = (models) => {
-  //   Orders.belongsTo(models.Cnpjs, { foreignKey: 'cnpjId', as: 'cnpjs' });
-  //   Orders.belongsTo(models.Users, { foreignKey: 'userId', as: 'users' });
-  //   Orders.belongsTo(models.Buyers, { foreignKey: 'buyerId', as: 'buyers' });
-  //   Orders.belongsTo(models.Providers, { foreignKey: 'providerId', as: 'providers' });
-  // };
+  Orders.associate = (models) => {
+    Orders.belongsTo(models.Cnpjs, { foreignKey: 'cnpjId', as: 'cnpjs' });
+    Orders.belongsTo(models.Users, { foreignKey: 'userId', as: 'users' });
+    // Orders.belongsTo(models.Buyers, { foreignKey: 'buyerId', as: 'buyers' });
+    // Orders.belongsTo(models.Providers, { foreignKey: 'providerId', as: 'providers' });
+  };
 
   return Orders;
 };
